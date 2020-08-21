@@ -17,16 +17,15 @@ class Config(BaseSettings):
 
     # 配置你的Mysql环境
     MYSQL_USERNAME: str = 'root'
-    MYSQL_PASSWORD: str = "19990909"
+    MYSQL_PASSWORD: str = "123456"
     MYSQL_HOST: Union[AnyHttpUrl, IPvAnyAddress] = "127.0.0.1"
     # MYSQL_HOST: Union[AnyHttpUrl, IPvAnyAddress] = "218.17.39.34"
-    MYSQL_DATABASE: str = 'test'
+    MYSQL_DATABASE: str = 'Tools'
 
     # Mysql地址
     # SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:19990909@127.0.0.1:3306/test?charset=utf8"
     SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{MYSQL_USERNAME}:{MYSQL_PASSWORD}@" \
                               f"{MYSQL_HOST}/{MYSQL_DATABASE}?charset=utf8mb4"
-    # 本机IP: 218.17.39.34
 
 
 config = Config()
